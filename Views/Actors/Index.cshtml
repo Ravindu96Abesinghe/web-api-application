@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WebApplicationApi.Models.Actors>
+
+@{
+    ViewBag.Title = "Actors";
+}
+
+<h2>Actors</h2>
+
+<p>
+    <a asp-controller="Actors" asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>AcademicWinner</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AcademicWinner)
+            </td>
+        </tr>
+    }
+
+</table>
